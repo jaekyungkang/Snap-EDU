@@ -9,7 +9,7 @@
     <img src="./SEA Logomark.png" alt="Logo" width="180" height="80">
   </a>
 
-<h3 align="center">project_title</h3>
+<h3 align="center">Education</h3>
 
   <p align="center">
     SHORT project_description (Ex. Todo App)
