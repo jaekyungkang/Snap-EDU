@@ -12,7 +12,7 @@
 <h3 align="center">Education</h3>
 
   <p align="center">
-    SHORT project_description (Ex. Todo App)
+    Game to explore different careers/majors!
     <br />
     <a href="https://github.com/github_username/repo_name"><strong>Explore the Docs Link»</strong></a>
     <br />
