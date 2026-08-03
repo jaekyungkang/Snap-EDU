@@ -83,7 +83,7 @@ This is an example of how to list things you need to use the software and how to
 1. Make a Supabase account [Supabase](https://supabase.com/)
 2. Clone the repo
    ```sh
-   git clone [https://github.com/github_username/repo_name.git](https://github.com/jaekyungkang/Snap-EDU)
+   git clone https://github.com/jaekyungkang/Snap-EDU
    ```
 3. Install NPM packages
    ```sh
