@@ -1,0 +1,26 @@
+[
+  {
+    "id": 0,
+    "lessonPicture": "https://",
+    "lessonTitle": "Making a Generator",
+    "lessonDescription": "In this lesson, you will ..."
+  },
+  {
+    "id": 1,
+    "lessonPicture": "https://",
+    "lessonTitle": "What is a generator?",
+    "lessonDescription": "In this lesson, you will learn what a generator is..."
+  },
+  {
+    "id": 2,
+    "lessonPicture": "https://",
+    "lessonTitle": "Lighting your house",
+    "lessonDescription": "In this lesson, you will learn how to light your house with a generator..."
+  },
+  {
+    "id": 3,
+    "lessonPicture": "https://",
+    "lessonTitle": "Ready to play?",
+    "lessonDescription": "In this lesson, you will learn how to play the game..."
+  }
+]
