@@ -21,6 +21,7 @@ import PostcaptureOptions from "../components/PostcaptureActions";
 // Add supabase to store:
 import { supabase } from "../utils/hooks/supabase";
 import CameraGalleryMenu from "../components/CameraGalleryMenu";
+import { color } from "@rn-vui/base";
 
 export default function CameraScreen({ navigation, focused }) {
   const tabBarHeight = useBottomTabBarHeight();
@@ -183,7 +184,7 @@ export default function CameraScreen({ navigation, focused }) {
         ]}
       >
         <CameraView style={styles.camera} facing={facing} ref={cameraRef} />
-        <CameraOptions flipCamera={flipCamera} />
+        <CameraOptions flipCamera={flipCamera} navigation={navigation} />
         <CameraActions
           galleryMenu={galleryMenu}
           checkGallery={checkGallery}
@@ -240,7 +241,7 @@ export default function CameraScreen({ navigation, focused }) {
       ]}
     >
       <CameraView style={styles.camera} facing={facing} ref={cameraRef} />
-      <CameraOptions flipCamera={flipCamera} />
+      <CameraOptions flipCamera={flipCamera} navigation={navigation} />
       <CameraActions
         galleryMenu={galleryMenu}
         checkGallery={checkGallery}

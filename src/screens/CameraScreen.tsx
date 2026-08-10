@@ -7,10 +7,15 @@ import {
   Image,
   SafeAreaView,
 } from "react-native";
-import { CameraView, CameraType, FlashMode, useCameraPermissions } from "expo-camera";
+import {
+  CameraView,
+  CameraType,
+  FlashMode,
+  useCameraPermissions,
+} from "expo-camera";
 import { supabase } from "../lib/supabase";
 
-export default function CameraScreen() {
+export default function CameraScreen({ navigation }) {
   const [permission, requestPermission] = useCameraPermissions();
   const [facing, setFacing] = useState<CameraType>("back");
   const [flash, setFlash] = useState<FlashMode>("off");
@@ -28,7 +33,10 @@ export default function CameraScreen() {
         <Text style={styles.permissionText}>
           Snap needs camera access to take Snaps.
         </Text>
-        <TouchableOpacity style={styles.permissionButton} onPress={requestPermission}>
+        <TouchableOpacity
+          style={styles.permissionButton}
+          onPress={requestPermission}
+        >
           <Text style={styles.permissionButtonText}>Enable Camera</Text>
         </TouchableOpacity>
       </View>
@@ -92,11 +100,15 @@ export default function CameraScreen() {
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.iconButton}
-            onPress={() =>
-              setFlash((f) => (f === "off" ? "on" : "off"))
-            }
+            onPress={() => setFlash((f) => (f === "off" ? "on" : "off"))}
           >
             <Text style={styles.iconText}>{flash === "off" ? "⚡" : "⚡︎"}</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.gameButton}
+            onPress={() => navigation.navigate("Island")}
+          >
+            <Text style={styles.iconText}>🎮</Text>
           </TouchableOpacity>
         </View>
 
@@ -107,9 +119,7 @@ export default function CameraScreen() {
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.flipButton}
-            onPress={() =>
-              setFacing((f) => (f === "back" ? "front" : "back"))
-            }
+            onPress={() => setFacing((f) => (f === "back" ? "front" : "back"))}
           >
             <Text style={styles.iconText}>↺</Text>
           </TouchableOpacity>
@@ -158,6 +168,14 @@ const styles = StyleSheet.create({
     height: 44,
     borderRadius: 22,
     backgroundColor: "rgba(0,0,0,0.35)",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  gameButton: {
+    width: 44,
+    height: 44,
+    borderRadius: 22,
+    backgroundColor: "#F1FF2D",
     alignItems: "center",
     justifyContent: "center",
   },
