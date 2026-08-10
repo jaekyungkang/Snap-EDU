@@ -1,5 +1,3 @@
-## Templates are nice so use one!
-
 <a id="readme-top"></a>
 
 <!-- PROJECT LOGO -->
@@ -10,6 +8,8 @@
   </a>
 
 <h3 align="center">Education</h3>
+<h3 align="center">Snap Island</h3>
+
 
   <p align="center">
     Game to explore different careers/majors!
@@ -56,7 +56,7 @@ This project is an interactive game that takes place on a 2D island. The player 
 
 - [![Next][Next.js]][Next-url]
 - [![React][React.js]][React-url]
-- [![Supabase][Supabase]][Supabase-url]
+- [![Supabase][Supabase.js]][Supabase-url]
 
 
 
@@ -129,7 +129,7 @@ Distributed under the project_license. See `LICENSE.txt` for more information.
 [Next-url]: https://nextjs.org/
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/
-[Supabase]: img.shields.io/badge/…?style=for-the-badge&logo=supabase&…
+[Supabase.js]: img.shields.io/badge/…?style=for-the-badge&logo=supabase&…
 [Supabase-url]: supabase.com
 ## Let's talk resouces
 
