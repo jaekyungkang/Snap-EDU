@@ -1,60 +1,139 @@
-# Snap Clone — Starter Project
+<a id="readme-top"></a>
 
-A minimal Snapchat-look-alike starter fullstack mobile dev.
-It ships with exactly two things working end-to-end:
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/github_username/repo_name">
+    <img src="./SNAPISLANDMOCK.png" alt="Logo" width="500" height="1000">
+  </a>
 
-1. A Snapchat-styled **login/sign-up screen** (Supabase Auth, email + password)
-2. A **full-screen camera** that opens right after login (Expo Camera —
-   capture photo, flip camera, toggle flash, preview + retake)
+<h5 align="center">Education LIONS</h5>
+<h1 align="center">Snap Island</h1>
 
-Everything else — Stories, chat, friends, disappearing snaps, sending a
-snap to someone — is left as an exercise. There's a `TODO (students)` comment
-in `src/screens/CameraScreen.tsx` and `src/lib/supabase.ts` marking the two
-places you'll extend first.
 
-## Tech stack
+  <p align="center">
+    Game to explore different careers/majors!
+    <br />
+  </p>
+</div>
 
-- Expo **SDK 54** (pinned — required for this to work in current Expo Go)
-- React Native 0.81 / React 19
-- Written in Javascript but is scaffolded to be refactor in TypeScript
-- Supabase (`@supabase/supabase-js`) for auth + database
-- `expo-camera` for the camera
-- `@react-navigation/native` + `native-stack` are pre-installed (not wired up
-  yet) — you'll want these once you add more screens (chat, stories, profile)
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#license">License</a></li>
+  </ol>
+</details>
 
-## 1. Set up Supabase
+<!-- ABOUT THE PROJECT -->
 
-1. Create a free project at https://supabase.com
-2. In your project, go to **Settings → API** and copy the **Project URL**
-   and the **anon/public key**
-3. Create an `.env.local` on the root. Paste in the following keys with YOUR values.
+## About The Project
 
-```js
-const SUPABASE_URL = "https://YOUR-PROJECT-REF.supabase.co";
-const SUPABASE_ANON_KEY = "YOUR-ANON-KEY";
-```
+This project is an interactive game that takes place on a 2D island. The player interacts with markers that takes them to a lesson plan and mini game about a possible career/major pathway. After finishing the lesson, the player is prompted to either explore more lessons or learn more from different resources. Once completed, the player can return to the island and explore different markers. 
 
-4. In Supabase, go to **Authentication → Providers** and make sure
-   **Email** is `not` enabled. Under **Authentication →
-   Settings** you may want to turn **off** "Confirm email" so users can
-   sign up and log straight in without checking an inbox.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 2. Install & run
+### Built With 
 
-```bash
-npm install
-npx expo start
-```
+- [![Next][Next.js]][Next-url]
+- [![React][React.js]][React-url]
+- [![Supabase][Supabase.js]][Supabase-url]
 
-Scan the QR code with the **Expo Go** app (SDK 54 build) on your phone.
-Camera access requires a physical device or a simulator with camera
-support — it will not work in the web preview. Please allow Expo Go to access your camera
 
-## 3. Project structure
 
-```
-App.jsx                    -- auth listener: shows LoginScreen or CameraScreen
-src/lib/supabase.js         -- Supabase client (put your keys here)
-src/screens/LoginScreen.jsx  -- Snapchat-styled auth screen
-src/screens/CameraScreen.jsx -- full-screen camera + capture/preview
-```
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- GETTING STARTED -->
+
+## Getting Started
+
+This is an example of how you may give instructions on setting up your project locally.
+To get a local copy up and running, follow these simple example steps.
+
+### Prerequisites
+
+This is an example of how to list things you need to use the software and how to install them.
+
+- npm
+  ```sh
+  npm install
+  ```
+
+### Installation
+
+1. Make a Supabase account [Supabase](https://supabase.com/)
+2. Clone the repo
+   ```sh
+   git clone https://github.com/jaekyungkang/Snap-EDU
+   ```
+3. Install NPM packages
+   ```sh
+   npm install
+   ```
+4. Add Supabase URL and KEY to `.env.local`
+   ```js
+   EXPO_PUBLIC_SUPABASE_URL=
+   EXPO_PUBLIC_SUPABASE_KEY=
+   ```
+5. Change git remote url to avoid accidental pushes to base project
+   ```sh
+   git remote set-url origin github_username/repo_name
+   git remote -v # confirm the changes
+   ```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- USAGE EXAMPLES -->
+
+## Usage
+## 🏝️ Snap Island Demo
+
+<p align="center">
+  <img src="./snap-island-demo.gif" width="300" alt="Snap Island Demo">
+</p>
+<p align="center">
+  <img src="./Simulator Screenshot - iPhone 17 Pro - 2026-08-10 at 09.24.47.png" width="300" alt="Snap Island Demo">
+</p>
+Additional screenshots, code examples and demos work well in this space. You may also link to more resources. If you are creating possible lesson plans for different pathways, this will be helpful! 
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LICENSE -->
+
+## License
+
+Distributed under the project_license. See `LICENSE.txt` for more information.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
+[license-url]: https://github.com/github_username/repo_name/blob/master/LICENSE.txt
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/in/linkedin_username
+[product-screenshot]: images/screenshot.png
+[Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
+[Next-url]: https://nextjs.org/
+[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[React-url]: https://reactjs.org/
+[Supabase.js]: img.shields.io/badge/…?style=for-the-badge&logo=supabase&…
+[Supabase-url]: supabase.com
+## Let's talk resouces
+
+🌳 If you want to implement a table or bold text or even bullet point, use this [documentation](https://google.github.io/styleguide/docguide/style.html) to get the right syntax. Don't be afraid to look at other templates and pull the parts and types you like! Sharing is caring.
