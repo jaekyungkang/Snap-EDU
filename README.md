@@ -14,10 +14,6 @@
   <p align="center">
     Game to explore different careers/majors!
     <br />
-    <a href="https://github.com/github_username/repo_name"><strong>Explore the Docs Link»</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/github_username/repo_name">View Demo Link</a>
   </p>
 </div>
 
@@ -106,7 +102,8 @@ This is an example of how to list things you need to use the software and how to
 
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources. If you are creating possible lesson plans for different pathways, this will be helpful! 
+Additional screenshots, code examples and demos work well in this space. You may also link to more resources. If you are creating possible lesson plans for different pathways, this will be helpful! 
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
