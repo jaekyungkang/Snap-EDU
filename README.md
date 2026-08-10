@@ -104,7 +104,7 @@ This is an example of how to list things you need to use the software and how to
 ## 🏝️ Snap Island Demo
 
 <p align="center">
-  <img src="./assets/snap-island-demo.gif" width="300" alt="Snap Island Demo">
+  <img src="./snap-island-demo.gif" width="300" alt="Snap Island Demo">
 </p>
 Additional screenshots, code examples and demos work well in this space. You may also link to more resources. If you are creating possible lesson plans for different pathways, this will be helpful! 
 
