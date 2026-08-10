@@ -7,8 +7,8 @@
     <img src="./SNAPISLANDMOCK.png" alt="Logo" width="500" height="1000">
   </a>
 
-<h3 align="center">Education</h3>
-<h3 align="center">Snap Island</h3>
+<h5 align="center">Education LIONS</h5>
+<h1 align="center">Snap Island</h1>
 
 
   <p align="center">
@@ -48,7 +48,6 @@ This project is an interactive game that takes place on a 2D island. The player 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Built With 
-(*Note: scroll down in the markdown view of this readme to configure the syntax and switch out tech stacks.)
 
 - [![Next][Next.js]][Next-url]
 - [![React][React.js]][React-url]
