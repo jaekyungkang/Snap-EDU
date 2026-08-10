@@ -4,7 +4,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/github_username/repo_name">
-    <img src="./SEA Logomark.png" alt="Logo" width="180" height="80">
+    <img src="./SNAPISLANDMOCK.png" alt="Logo" width="500" height="1000">
   </a>
 
 <h3 align="center">Education</h3>
@@ -105,6 +105,9 @@ This is an example of how to list things you need to use the software and how to
 
 <p align="center">
   <img src="./snap-island-demo.gif" width="300" alt="Snap Island Demo">
+</p>
+<p align="center">
+  <img src="./Simulator Screenshot - iPhone 17 Pro - 2026-08-10 at 09.24.47.png" width="300" alt="Snap Island Demo">
 </p>
 Additional screenshots, code examples and demos work well in this space. You may also link to more resources. If you are creating possible lesson plans for different pathways, this will be helpful! 
 
