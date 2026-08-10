@@ -8,7 +8,7 @@ import {
   Image,
 } from "react-native";
 import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
-import lesson from "../../lesson.json";
+import lesson from "../../lesson";
 // import AwesomeButton from "react-native-really-awesome-button";
 import { useNavigation } from "@react-navigation/native";
 
@@ -30,111 +30,135 @@ export default function TaskScreen() {
             <Text
               style={{
                 fontSize: 16,
-                color: "#6B7280",
+                color: "#000000",
                 marginTop: 6,
                 lineHeight: 24,
               }}
             >
-              Learn dive into the world of engineerinng with our generator!
+              Let's dive into the world of engineerinng with our generator!
             </Text>
           </View>
 
-          <View style={styles.card}>
-            <Image
-              source={{
-                uri: lesson[currentLesson].lessonPicture,
-              }}
-              style={styles.image}
-            />
-
-            <Text style={styles.title}>
-              {lesson[currentLesson].lessonTitle}
-            </Text>
-
-            <Text style={styles.description}>
-              {lesson[currentLesson].lessonDescription}
-            </Text>
-
-            <TouchableOpacity
-              style={styles.button}
-              onPress={() => {
-                if (currentLesson === lesson.length - 1) {
-                  handleStartGame();
-                } else {
-                  setCurrentLesson(currentLesson + 1);
+          <View style={styles.imageContainer}>
+            {lesson[currentLesson].lessonPictures.map((picture, index) => (
+              <Image
+                key={index}
+                source={picture}
+                style={
+                  lesson[currentLesson].lessonPictures.length > 1
+                    ? styles.smallImage
+                    : styles.image
                 }
-              }}
+              />
+            ))}
+          </View>
+
+          <Text style={styles.title}>{lesson[currentLesson].lessonTitle}</Text>
+
+          <Text style={styles.description}>
+            {lesson[currentLesson].lessonDescription}
+          </Text>
+
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => {
+              if (currentLesson === lesson.length - 1) {
+                handleStartGame();
+              } else {
+                setCurrentLesson(currentLesson + 1);
+              }
+            }}
+          >
+            <Text style={styles.buttonText}>
+              {currentLesson === lesson.length - 1 ? "Start Game" : "Next"}
+            </Text>
+          </TouchableOpacity>
+
+          <View style={styles.bottomButtons}>
+            <TouchableOpacity
+              style={[
+                styles.smallButton,
+                {
+                  backgroundColor:
+                    selectedTab === "DIY" ? "#E6B000" : "#FFC529",
+                },
+              ]}
+              onPress={() => setSelectedTab("DIY")}
             >
-              <Text style={styles.buttonText}>
-                {currentLesson === lesson.length - 1
-                  ? "Start Game"
-                  : "View Details"}
-              </Text>
+              <Text style={styles.smallButtonText}>DIY</Text>
             </TouchableOpacity>
 
-            <View style={styles.bottomButtons}>
-              <TouchableOpacity
-                style={styles.smallButton}
-                onPress={() => setSelectedTab("DIY")}
-              >
-                <Text style={styles.smallButtonText}>DIY</Text>
-              </TouchableOpacity>
+            <TouchableOpacity
+              style={[
+                styles.smallButton,
+                {
+                  backgroundColor:
+                    selectedTab === "Schools" ? "#3E7EF2" : "#4A90FF",
+                },
+              ]}
+              onPress={() => setSelectedTab("Schools")}
+            >
+              <Text style={styles.smallButtonText}>Schools</Text>
+            </TouchableOpacity>
 
-              <TouchableOpacity
-                style={styles.smallButton}
-                onPress={() => setSelectedTab("Schools")}
-              >
-                <Text style={styles.smallButtonText}>Schools</Text>
-              </TouchableOpacity>
+            <TouchableOpacity
+              style={[
+                styles.smallButton,
+                {
+                  backgroundColor:
+                    selectedTab === "Programs" ? "#E94343" : "#FF5A5A",
+                },
+              ]}
+              onPress={() => setSelectedTab("Programs")}
+            >
+              <Text style={styles.smallButtonText}>Programs</Text>
+            </TouchableOpacity>
 
-              <TouchableOpacity
-                style={styles.smallButton}
-                onPress={() => setSelectedTab("Programs")}
-              >
-                <Text style={styles.smallButtonText}>Programs</Text>
-              </TouchableOpacity>
+            <TouchableOpacity
+              style={[
+                styles.smallButton,
+                {
+                  backgroundColor:
+                    selectedTab === "Learn" ? "#1FA76E" : "#28C98C",
+                },
+              ]}
+              onPress={() => setSelectedTab("Learn")}
+            >
+              <Text style={styles.smallButtonText}>Learn</Text>
+            </TouchableOpacity>
+          </View>
 
-              <TouchableOpacity
-                style={styles.smallButton}
-                onPress={() => setSelectedTab("Learn")}
-              >
-                <Text style={styles.smallButtonText}>Learn</Text>
-              </TouchableOpacity>
-            </View>
+          <View style={styles.contentArea}>
+            {selectedTab === "DIY" && (
+              <Text style={styles.contentText}>
+                Are you interested in learning more about engineering? Check out
+                this video on learning how to build a potato battery at home!
+                https://youtu.be/U74F00oRuEY?si=u41g1dCwzInrCQZU .
+              </Text>
+            )}
 
-            <View style={styles.contentArea}>
-              {selectedTab === "DIY" && (
-                <Text style={styles.contentText}>
-                  Are you interested in learning more about engineering? Check
-                  out this video on learning how to build a potato battery at
-                  home! https://youtu.be/U74F00oRuEY?si=u41g1dCwzInrCQZU .
-                </Text>
-              )}
+            {selectedTab === "Schools" && (
+              <Text style={styles.contentText}>
+                Many schools offer mechanical engineering programs for students.
+                A couple of them include Cal Poly SLO, Pasadena City College,
+                and UC Berkeley.
+              </Text>
+            )}
 
-              {selectedTab === "Schools" && (
-                <Text style={styles.contentText}>
-                  Many schools offer mechanical engineering programs for
-                  students. A couple of them include Cal Poly SLO, Pasadena City
-                  College, and UC Berkeley.
-                </Text>
-              )}
+            {selectedTab === "Programs" && (
+              <Text style={styles.contentText}>
+                Interested in summer programs for mechanical engineering? Check
+                out the Research Science Institute or the Engineering Summer
+                Academy at Penn.
+              </Text>
+            )}
 
-              {selectedTab === "Programs" && (
-                <Text style={styles.contentText}>
-                  Interested in summer programs for mechanical engineering?
-                  Check out the Research Science Institute or the Engineering
-                  Summer Academy at Penn.
-                </Text>
-              )}
-
-              {selectedTab === "Learn" && (
-                <Text style={styles.contentText}>
-                  Do you like what you learned today? You might be interested in
-                  Aerospace, Robitics, Civil, Electrical, and many more
-                  engieering fields!
-                </Text>
-              )}
-            </View>
+            {selectedTab === "Learn" && (
+              <Text style={styles.contentText}>
+                Enjoyed this? You might also like Aerospace, Robotics, Civil,
+                Electrical, and many more engineering fields.,
+              </Text>
+            )}
           </View>
           {/* <AwesomeButton
             width={75}
@@ -181,7 +205,7 @@ export default function TaskScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#F4F7FB",
+    backgroundColor: "#B8DB72",
   },
 
   scrollView: {
@@ -197,75 +221,95 @@ const styles = StyleSheet.create({
   },
 
   card: {
-    backgroundColor: "#FFFFFF",
-    marginTop: 30,
-    borderRadius: 24,
-    overflow: "hidden",
+    backgroundColor: "#FFF8EF",
+    marginTop: 28,
+    borderRadius: 30,
+    padding: 22,
 
     shadowColor: "#000",
-    shadowOffset: { width: 0, height: 8 },
     shadowOpacity: 0.08,
-    shadowRadius: 18,
-    elevation: 6,
-  },
+    shadowRadius: 10,
+    shadowOffset: {
+      width: 0,
+      height: 5,
+    },
 
-  image: {
-    width: "100%",
-    height: 220,
+    elevation: 5,
   },
 
   title: {
-    fontSize: 24,
-    fontWeight: "700",
-    color: "#111827",
-    marginHorizontal: 20,
-    marginTop: 20,
+    fontSize: 26,
+    fontWeight: "800",
+    color: "#2F2F2F",
+    textAlign: "center",
+    marginHorizontal: 12,
   },
 
   description: {
     fontSize: 15,
-    color: "#6B7280",
-    lineHeight: 24,
-    marginHorizontal: 20,
-    marginTop: 10,
-    marginBottom: 20,
+    color: "#555",
+    lineHeight: 23,
+    textAlign: "center",
+    marginBottom: 26,
   },
 
   button: {
-    marginHorizontal: 20,
-    marginBottom: 20,
-    backgroundColor: "#4F46E5",
-    borderRadius: 14,
-    paddingVertical: 15,
+    marginBottom: 25,
+    backgroundColor: "#58BDF6",
+    borderRadius: 18,
+    paddingVertical: 16,
     alignItems: "center",
+    shadowColor: "#2D8CC4",
+    shadowOffset: {
+      width: 0,
+      height: 6,
+    },
+    shadowOpacity: 1,
+    shadowRadius: 0,
+    elevation: 8,
   },
 
   buttonText: {
-    color: "#FFFFFF",
-    fontSize: 16,
-    fontWeight: "700",
+    color: "white",
+    fontSize: 20,
+    fontWeight: "800",
+    letterSpacing: 1,
   },
 
   bottomButtons: {
     flexDirection: "row",
-    justifyContent: "space-evenly",
-    alignItems: "center",
-    paddingVertical: 15,
-    backgroundColor: "#FFFFFF",
-    borderTopWidth: 1,
-    borderTopColor: "#E5E7EB",
+    flexWrap: "wrap",
+    justifyContent: "space-between",
+    rowGap: 14,
+    marginHorizontal: 20,
+    marginBottom: 20,
+    // alignItems: "center",
+    // paddingVertical: 15,
+    // backgroundColor: "#FFFFFF",
+    // borderTopWidth: 1,
+    // borderTopColor: "#E5E7EB",
   },
   smallButton: {
-    backgroundColor: "#4F46E5",
-    paddingVertical: 10,
-    paddingHorizontal: 12,
-    borderRadius: 10,
+    width: "48%",
+    height: 54,
+    borderRadius: 14,
+    justifyContent: "center",
+    alignItems: "center",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 5,
+    },
+    shadowOpacity: 0.18,
+    shadowRadius: 0,
+    elevation: 5,
   },
 
   smallButtonText: {
     color: "white",
-    fontWeight: "600",
-    fontSize: 13,
+    fontWeight: "800",
+    fontSize: 15,
+    letterSpacing: 0.4,
   },
 
   contentArea: {
@@ -278,5 +322,27 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: "#374151",
     lineHeight: 24,
+  },
+  imageContainer: {
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: 12,
+    marginBottom: 20,
+    flexWrap: "wrap",
+  },
+
+  smallImage: {
+    width: 85,
+    height: 85,
+    resizeMode: "contain",
+  },
+
+  image: {
+    width: "100%",
+    height: 190,
+    borderRadius: 18,
+    resizeMode: "contain",
+    marginBottom: 18,
   },
 });
