@@ -9,6 +9,7 @@ import {
   Modal,
   Image,
   Dimensions,
+  ScrollView,
   SafeAreaView,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
@@ -237,7 +238,7 @@ export default function GameScreen() {
   }
 
   return (
-    <SafeAreaView style={styles.container}>
+    <ScrollView style={styles.container} scrollEnabled={false}>
       {/* Header */}
       <View style={styles.header}>
         <Text style={styles.eyebrow}>ASSEMBLY BAY · SEQUENCE</Text>
@@ -377,7 +378,7 @@ export default function GameScreen() {
           </View>
         </View>
       </Modal>
-    </SafeAreaView>
+    </ScrollView>
   );
 }
 
@@ -393,6 +394,12 @@ function CompletionScreen({ onClose, onPlayAgain }) {
     if (navigation.canGoBack()) {
       navigation.goBack();
     }
+  };
+
+  const goToIsland = () => {
+    navigation.navigate("Island", {
+      openGame: true,
+    });
   };
 
   const handleLearnPress = (key) => {
@@ -433,7 +440,7 @@ function CompletionScreen({ onClose, onPlayAgain }) {
           <View style={[styles.progressFill, { width: "35%" }]} />
         </View>
 
-        <TouchableOpacity style={styles.nextButton} onPress={goToLessons}>
+        <TouchableOpacity style={styles.nextButton} onPress={goToIsland}>
           <Text style={styles.nextButtonText}>Back to the Island</Text>
         </TouchableOpacity>
 
@@ -517,11 +524,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#12181A",
-    paddingHorizontal: 20,
+    padding: 20,
   },
 
   header: {
     marginTop: 16,
+    // padding: 10,
   },
   eyebrow: {
     color: "#7B8A8C",
@@ -541,6 +549,7 @@ const styles = StyleSheet.create({
     flexWrap: "wrap",
     gap: 10,
     marginTop: 18,
+    padding: 10,
   },
   tab: {
     borderWidth: 1,
