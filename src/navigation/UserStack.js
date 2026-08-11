@@ -12,6 +12,7 @@ import AstrologyScreen from "../screens/AstrologyScreen";
 import MemoryScreen from "../screens/MemoryScreen";
 import EventScreen from "../screens/EventScreen"; //New component by Sona and Christian
 import IslandScreen from "../screens/IslandScreen";
+import TaskScreen from "../screens/TaskScreen";
 import GameScreen from "../screens/GameScreen";
 
 const Stack = createStackNavigator();
@@ -76,6 +77,13 @@ export default function App() {
           component={IslandScreen}
           options={{
             headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="TaskScreen"
+          component={TaskScreen}
+          options={{
+            headerShown: true,
           }}
         />
         <Stack.Screen

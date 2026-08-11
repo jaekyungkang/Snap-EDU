@@ -12,6 +12,7 @@ import {
 import { ResumableZoom } from "react-native-zoom-toolkit";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { supabase } from "../../utils/hooks/supabase";
+import TaskScreen from "../screens/TaskScreen";
 const islandImage = require("../../assets/island.png");
 const logoImage = require("../../assets/logo.png");
 const bitmojiImage = require("../../assets/daniel.png");
@@ -26,9 +27,9 @@ const pathwayImages = {
   film: require("../../assets/film.png"),
   bio: require("../../assets/biology.png"),
 };
-export default function IslandScreen({ navigation }) {
+export default function IslandScreen({ navigation, route }) {
+  const [step, setStep] = useState(route.params?.openGame ? "game" : "start");
   // controls which part of IslandScreen is currently visible.
-  const [step, setStep] = useState("start");
 
   const closeIsland = () => {
     navigation.goBack();
@@ -158,17 +159,19 @@ function GameView({ navigation }) {
   }
 
   const openLesson = (asset) => {
+    if (asset.asset_key === "meche") {
+      navigation.navigate("TaskScreen", {
+        pathwayId: asset.id,
+        pathwayTitle: asset.tag,
+      });
+
+      return;
+    }
+
     Alert.alert(
       asset.tag,
       `Coming soon! This will open the ${asset.tag} lesson.`,
     );
-
-    /*
-  navigation.navigate("Lesson", {
-    pathway: asset.id,
-    title: asset.tag,
-  });
-  */
   };
   const filteredAssets =
     selectedCategory === "ALL"
